@@ -1,0 +1,10 @@
+need to finish animations
+need to add more characters
+need to add NPCs
+need to add enemies
+need ti add more tiles
+need to improve hit detection for melee combat
+need to add ranged combat
+need to add more maps
+need to add a level system
+need to add gear system

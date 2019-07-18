@@ -50,7 +50,7 @@ public class Assets {
         
         //UI
             //FONT
-            font28 = FontLoader.loadFont("/home/justin/NetBeansProjects/Knights-of-Camelot/res/textures/UI/Fonts/slkscr.ttf", 28f);
+            font28 = FontLoader.loadFont("C:\\Users\\Justin GamingPC\\Documents\\NetBeansProjects\\Knights-of-Camelot\\res\\textures\\UI\\Fonts\\slkscr.ttf", 28f);
             //INVENTORY UI
             inventoryScreen = ImageLoader.loadImage("/textures/UI/inventoryScreen.png");
             //MENU BUTTON FOR MENU STATE

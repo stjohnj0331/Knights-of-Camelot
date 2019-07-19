@@ -6,7 +6,7 @@
 package dev.algorythmic.KoC.states;
 
 import dev.algorythmic.KoC.Handler;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.ui.ClickListener;
 import dev.algorythmic.KoC.ui.UIImageButton;
 import dev.algorythmic.KoC.ui.UIManager;
@@ -26,7 +26,7 @@ public class MenuState extends State{
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUIManager(uiManager);
         
-        uiManager.addObject(new UIImageButton(200,200,128,64, Assets.btn_start, new ClickListener(){
+        uiManager.addObject(new UIImageButton(200,200,128,64, GFXAssets.btn_start, new ClickListener(){
             @Override
             public void onClick() {
                 handler.getMouseManager().setUIManager(null);

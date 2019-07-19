@@ -6,7 +6,7 @@
 package dev.algorythmic.KoC.items;
 
 import dev.algorythmic.KoC.Handler;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.inventory.Inventory;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -20,16 +20,16 @@ public class Item {
     
     //HANDLER
     public static Item[] items = new Item[256];
-    public static Item wood = new Item(Assets.wood, "Wood",0);
-    public static Item stone = new Item(Assets.stone, "Stone",1);
-    public static Item copperOre = new Item(Assets.copperOre, "Copper ore",2);
-    public static Item copperIngot = new Item(Assets.copperIngot, "Copper Ingot",3);
-    public static Item steelOre = new Item(Assets.steelOre, "Steel ore",4);
-    public static Item steelIngot = new Item(Assets.steelIngot, "Steel Ingot",5);
-    public static Item platinumOre = new Item(Assets.platinumOre, "Platinum ore",6);
-    public static Item platinumIngot = new Item(Assets.platinumIngot, "Platinum ingot",7);
-    public static Item starMetalOre = new Item(Assets.starMetalOre, "Starmetal ore",8);
-    public static Item starMetalIngot = new Item(Assets.starMetalIngot, "Starmetal Ingot",9);
+    public static Item wood = new Item(GFXAssets.wood, "Wood",0);
+    public static Item stone = new Item(GFXAssets.stone, "Stone",1);
+    public static Item copperOre = new Item(GFXAssets.copperOre, "Copper ore",2);
+    public static Item copperIngot = new Item(GFXAssets.copperIngot, "Copper Ingot",3);
+    public static Item steelOre = new Item(GFXAssets.steelOre, "Steel ore",4);
+    public static Item steelIngot = new Item(GFXAssets.steelIngot, "Steel Ingot",5);
+    public static Item platinumOre = new Item(GFXAssets.platinumOre, "Platinum ore",6);
+    public static Item platinumIngot = new Item(GFXAssets.platinumIngot, "Platinum ingot",7);
+    public static Item starMetalOre = new Item(GFXAssets.starMetalOre, "Starmetal ore",8);
+    public static Item starMetalIngot = new Item(GFXAssets.starMetalIngot, "Starmetal Ingot",9);
     
     //ITEM CLASS
     public static final int ITEM_WIDTH = 32, ITEM_HEIGHT = 32;

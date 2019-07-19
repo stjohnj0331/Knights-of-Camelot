@@ -6,7 +6,7 @@
 package dev.algorythmic.KoC.inventory;
 
 import dev.algorythmic.KoC.Handler;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.gfx.Text;
 import dev.algorythmic.KoC.items.Item;
 import java.awt.Color;
@@ -104,7 +104,7 @@ public class Inventory {
     public void render(Graphics g){
         if(!active)
             return;
-        g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
+        g.drawImage(GFXAssets.inventoryScreen, invX, invY, invWidth, invHeight, null);
         
         int len = inventoryItems.size();
         
@@ -116,14 +116,14 @@ public class Inventory {
                 continue;
             if( i == 0){
                 Text.drawString(g,"> "+inventoryItems.get(selectedItem + i).getName()+" <", 
-                    invListCenterX, invListCenterY + i * invListSpacing, true, Color.YELLOW, Assets.font28);
+                    invListCenterX, invListCenterY + i * invListSpacing, true, Color.YELLOW, GFXAssets.font28);
             }else{
                 Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), 
-                    invListCenterX, invListCenterY + i * invListSpacing, true, Color.white, Assets.font28);
+                    invListCenterX, invListCenterY + i * invListSpacing, true, Color.white, GFXAssets.font28);
             }
             Item item = inventoryItems.get(selectedItem);
             g.drawImage(item.getTexture(), invImageX, invImageY, invImageWidth, invImageHeight, null);
-            Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, true, Color.WHITE, Assets.font28);
+            Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, true, Color.WHITE, GFXAssets.font28);
         }
     }
 }

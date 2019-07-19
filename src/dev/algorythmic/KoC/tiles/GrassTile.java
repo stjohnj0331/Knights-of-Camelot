@@ -5,7 +5,7 @@
  */
 package dev.algorythmic.KoC.tiles;
 
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 /**
  *
  * @author justin
@@ -13,7 +13,7 @@ import dev.algorythmic.KoC.gfx.Assets;
 public class GrassTile extends Tile{
     
     public GrassTile( int id) {
-        super(Assets.grass, id);
+        super(GFXAssets.grass, id);
     }
     
 }

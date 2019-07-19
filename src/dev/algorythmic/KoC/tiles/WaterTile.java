@@ -5,7 +5,7 @@
  */
 package dev.algorythmic.KoC.tiles;
 
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 /**
  *
  * @author justin
@@ -13,7 +13,7 @@ import dev.algorythmic.KoC.gfx.Assets;
 public class WaterTile extends Tile {
     
     public WaterTile(int id) {
-        super(Assets.water, id);
+        super(GFXAssets.water, id);
     }
     
     @Override public boolean isNotTraversable(){return true;}

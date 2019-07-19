@@ -21,6 +21,7 @@ public class SFXAssets {
     
     public static String getMusicTrack(int x){return music.get(x);}
     public static String getAnimationTrack(int x){return animations.get(x);}
+    public static String getAmbientTrack(int x){return ambient.get(x);}
     
     public static void init(){
         music = new ArrayList<>();
@@ -35,6 +36,7 @@ public class SFXAssets {
         //menus
         
         //ambient        
+        ambient.add("nature with brook.wav");
     }
     
     

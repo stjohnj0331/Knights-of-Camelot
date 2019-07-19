@@ -26,7 +26,7 @@ public class World {
     private Handler handler;
     private int width, height;
     private int spawnX, spawnY;
-    private String track;
+    private String music, ambient;
     private int[][] tiles;
     
     //ENTITIES
@@ -105,17 +105,17 @@ public class World {
         height = Utils.parseInt(tokens[1]);
         spawnX = Utils.parseInt(tokens[2]);
         spawnY = Utils.parseInt(tokens[3]);
-        //TEST CODE
-        //audio = new AudioPlayer("Medieval Melancholy.wav");
-        //audio.playSound();
-        track = SFXAssets.getMusicTrack(Utils.parseInt(tokens[4]));
-        audio = new AudioPlayer(track);
+        
+        music = SFXAssets.getMusicTrack(Utils.parseInt(tokens[4]));
+        ambient = SFXAssets.getAmbientTrack(Utils.parseInt(tokens[5]));
+        audio = new AudioPlayer(music);
+        //audio = new AudioPlayer(ambient);//throwing an error might be the codec used in conversion
         audio.playSound();
         
         tiles = new int[width][height];
         for(int y = 0 ; y < height ; y++){
             for(int x = 0 ; x < width ; x++){
-                tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 5]);
+                tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 6]);
             }
         }
     }

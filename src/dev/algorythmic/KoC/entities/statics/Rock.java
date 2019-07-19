@@ -6,7 +6,7 @@
 package dev.algorythmic.KoC.entities.statics;
 
 import dev.algorythmic.KoC.Handler;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.items.Item;
 import dev.algorythmic.KoC.tiles.Tile;
 import java.awt.Graphics;
@@ -32,7 +32,7 @@ public class Rock extends StaticEntity{
     }
 
     @Override public void render(Graphics g) {
-        g.drawImage(Assets.rock, (int)(x - handler.getGameCamera().getxOffset())
+        g.drawImage(GFXAssets.rock, (int)(x - handler.getGameCamera().getxOffset())
                 , (int)(y - handler.getGameCamera().getyOffset()), width, height, null);
         //for making the collision box visible
         //g.setColor(Color.red);

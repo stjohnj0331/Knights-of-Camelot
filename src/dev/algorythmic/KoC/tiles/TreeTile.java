@@ -5,7 +5,7 @@
  */
 package dev.algorythmic.KoC.tiles;
 
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 
 /**
  *
@@ -14,7 +14,7 @@ import dev.algorythmic.KoC.gfx.Assets;
 public class TreeTile extends Tile{
     
     public TreeTile(int id) {
-        super(Assets.tree, id);
+        super(GFXAssets.tree, id);
     }
     @Override public boolean isNotTraversable(){return true;}
 }

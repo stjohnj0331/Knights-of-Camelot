@@ -1,10 +1,11 @@
 package dev.algorythmic.KoC;
 
 import dev.algorythmic.KoC.display.Display;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.gfx.GameCamera;
 import dev.algorythmic.KoC.input.KeyManager;
 import dev.algorythmic.KoC.input.MouseManager;
+import dev.algorythmic.KoC.soundFX.SFXAssets;
 import dev.algorythmic.KoC.states.GameState;
 import dev.algorythmic.KoC.states.MenuState;
 import dev.algorythmic.KoC.states.SettingsState;
@@ -51,6 +52,7 @@ public class Game implements Runnable{
     //HANDLER
     private Handler handler;
     
+    
     //ACCESSOR
     public int getWidth(){return width;}
     public int getHeight(){return height;}
@@ -79,7 +81,8 @@ public class Game implements Runnable{
         display.getFrame().addMouseMotionListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
         display.getCanvas().addMouseMotionListener(mouseManager);
-        Assets.init();
+        GFXAssets.init();
+        SFXAssets.init();
         
         handler = new Handler(this);
         gameCamera = new GameCamera(handler, 0, 0);

@@ -8,7 +8,7 @@ package dev.algorythmic.KoC.entities.creatures;
 import dev.algorythmic.KoC.Handler;
 import dev.algorythmic.KoC.entities.Entity;
 import dev.algorythmic.KoC.gfx.Animation;
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 import dev.algorythmic.KoC.inventory.Inventory;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -50,13 +50,13 @@ public class Player extends Creature{
         
         //ANIMATIONS
             //MOVEMENT
-            animDown = new Animation(500, Assets.player_down);
-            animUp = new Animation(500, Assets.player_up);
-            animLeft = new Animation(500, Assets.player_left);
-            animRight = new Animation(500, Assets.player_right);
-            animStand = new Animation(500,Assets.player_stand);
+            animDown = new Animation(500, GFXAssets.player_down);
+            animUp = new Animation(500, GFXAssets.player_up);
+            animLeft = new Animation(500, GFXAssets.player_left);
+            animRight = new Animation(500, GFXAssets.player_right);
+            animStand = new Animation(500,GFXAssets.player_stand);
             //ATTACK
-            atkDown = new Animation(50,Assets.atk_down);
+            atkDown = new Animation(50,GFXAssets.atk_down);
         //INVENTORY
             inventory = new Inventory(handler);
     }
@@ -181,7 +181,7 @@ public class Player extends Creature{
         }else if(yAttack > 0){
             return atkDown.getCurrentFrame();
         }else//facing down
-            return Assets.player_stand[0];
+            return GFXAssets.player_stand[0];
     }
 
     

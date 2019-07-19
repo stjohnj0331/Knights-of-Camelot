@@ -5,7 +5,7 @@
  */
 package dev.algorythmic.KoC.tiles;
 
-import dev.algorythmic.KoC.gfx.Assets;
+import dev.algorythmic.KoC.gfx.GFXAssets;
 /**
  *
  * @author justin
@@ -13,7 +13,7 @@ import dev.algorythmic.KoC.gfx.Assets;
 public class SandWallTile extends Tile{
     
     public SandWallTile(int id) {
-        super(Assets.sandWall, id);
+        super(GFXAssets.sandWall, id);
     }
     
     @Override public boolean isNotTraversable(){return true;}

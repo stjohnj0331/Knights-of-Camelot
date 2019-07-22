@@ -36,7 +36,7 @@ public class SFXAssets {
         //menus
         
         //ambient        
-        ambient.add("nature with brook.wav");
+        ambient.add("FieldsAmbient.wav");
     }
     
     

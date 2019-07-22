@@ -12,10 +12,13 @@ import dev.algorythmic.KoC.entities.statics.Rock;
 import dev.algorythmic.KoC.entities.statics.Tree;
 import dev.algorythmic.KoC.items.ItemManager;
 import dev.algorythmic.KoC.soundFX.AudioPlayer;
+import dev.algorythmic.KoC.soundFX.FXAudioPlayer;
 import dev.algorythmic.KoC.soundFX.SFXAssets;
 import dev.algorythmic.KoC.tiles.Tile;
 import dev.algorythmic.KoC.utilities.Utils;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,7 +38,7 @@ public class World {
     private ItemManager itemManager;
     
     //AUDIO
-    AudioPlayer audio;
+    FXAudioPlayer audio;
     
     //ACCESSORS
     public EntityManager getEntityManager() {return entityManager;}
@@ -108,9 +111,14 @@ public class World {
         
         music = SFXAssets.getMusicTrack(Utils.parseInt(tokens[4]));
         ambient = SFXAssets.getAmbientTrack(Utils.parseInt(tokens[5]));
-        audio = new AudioPlayer(music);
-        //audio = new AudioPlayer(ambient);//throwing an error might be the codec used in conversion
-        audio.playSound();
+        audio = new FXAudioPlayer();
+        try {
+            audio.start(null);
+            //audio = new AudioPlayer(ambient);//throwing an error might be the codec used in conversion
+            //audio.playSound();
+        } catch (Exception ex) {
+            Logger.getLogger(World.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         tiles = new int[width][height];
         for(int y = 0 ; y < height ; y++){

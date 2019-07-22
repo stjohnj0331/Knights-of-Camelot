@@ -24,15 +24,16 @@ import javafx.stage.Stage;
 public class FXAudioPlayer extends Application{
     
     private MediaPlayer player;
+    private String track;
     
-    @Override public void init(){
-        new JFXPanel();
+    public FXAudioPlayer(String track){
+        this.track = track;
     }
 
     @Override public void start(Stage stage) throws Exception {
         init();
         //Locate the media content in the CLASSPATH
-        String resource = "C:/Users/Justin GamingPC/Documents/NetBeansProjects/SimpleJavaApps/audio1231321/New folder/Billy's Sacrifice.mp3";
+        String resource = track;
         URL url = ClassLoader.getSystemResource(resource);
         String path = null;
         if(url == null){
@@ -49,5 +50,7 @@ public class FXAudioPlayer extends Application{
             e.printStackTrace();
         }
     }
-    
+    @Override public void init(){
+        new JFXPanel();
+    }
 }

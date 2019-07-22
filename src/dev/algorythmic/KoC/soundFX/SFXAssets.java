@@ -30,13 +30,13 @@ public class SFXAssets {
         ambient = new ArrayList<>();
     
         //music
-        music.add("Medieval Melancholy.wav");
+        music.add("C:\\Users\\Justin GamingPC\\Documents\\NetBeansProjects\\Knights-of-Camelot\\res\\soundFiles\\Music\\Smooth Sailing.mp3");
         //animations
         
         //menus
         
         //ambient        
-        ambient.add("FieldsAmbient.wav");
+        ambient.add("C:\\Users\\Justin GamingPC\\Documents\\NetBeansProjects\\Knights-of-Camelot\\res\\soundFiles\\Atmosphere\\FieldsAmbient.mp3");
     }
     
     

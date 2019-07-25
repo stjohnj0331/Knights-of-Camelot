@@ -34,7 +34,7 @@ public class FXAudioPlayer extends Application{
         init();
         //Locate the media content in the CLASSPATH
         String resource = track;
-        URL url = ClassLoader.getSystemResource(resource);
+        URL url = getClass().getResource(track);
         String path = null;
         if(url == null){
             path = new File(resource).toURI().toString();

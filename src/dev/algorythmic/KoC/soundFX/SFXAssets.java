@@ -21,6 +21,7 @@ public class SFXAssets {
     
     public static String getMusicTrack(int x){return music.get(x);}
     public static String getAnimationTrack(int x){return animations.get(x);}
+    public static String getAmbientTrack(int x){return ambient.get(x);}
     
     public static void init(){
         music = new ArrayList<>();
@@ -29,12 +30,13 @@ public class SFXAssets {
         ambient = new ArrayList<>();
     
         //music
-        music.add("Medieval Melancholy.wav");
+        music.add("C:\\Users\\Justin GamingPC\\Documents\\NetBeansProjects\\Knights-of-Camelot\\res\\soundFiles\\Music\\Smooth Sailing.mp3");
         //animations
         
         //menus
         
         //ambient        
+        ambient.add("C:\\Users\\Justin GamingPC\\Documents\\NetBeansProjects\\Knights-of-Camelot\\res\\soundFiles\\Atmosphere\\FieldsAmbient.mp3");
     }
     
     

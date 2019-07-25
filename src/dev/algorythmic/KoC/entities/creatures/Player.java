@@ -50,13 +50,16 @@ public class Player extends Creature{
         
         //ANIMATIONS
             //MOVEMENT
-            animDown = new Animation(500, GFXAssets.player_down);
-            animUp = new Animation(500, GFXAssets.player_up);
-            animLeft = new Animation(500, GFXAssets.player_left);
-            animRight = new Animation(500, GFXAssets.player_right);
-            animStand = new Animation(500,GFXAssets.player_stand);
+            animDown = new Animation(250, GFXAssets.player_down);
+            animUp = new Animation(250, GFXAssets.player_up);
+            animLeft = new Animation(250, GFXAssets.player_left);
+            animRight = new Animation(250, GFXAssets.player_right);
+            animStand = new Animation(250,GFXAssets.player_stand);
             //ATTACK
-            atkDown = new Animation(50,GFXAssets.atk_down);
+            atkDown = new Animation(100,GFXAssets.atk_down);
+            atkUp = new Animation(100,GFXAssets.atk_up);
+            atkLeft = new Animation(100,GFXAssets.atk_left);
+            atkRight = new Animation(100,GFXAssets.atk_right);
         //INVENTORY
             inventory = new Inventory(handler);
     }
@@ -73,6 +76,9 @@ public class Player extends Creature{
         animRight.tick();
         animStand.tick();
         atkDown.tick();
+        atkUp.tick();
+        atkLeft.tick();
+        atkRight.tick();
         
         //MOVEMENT
         getInput();
@@ -170,6 +176,7 @@ public class Player extends Creature{
         inventory.render(g);
     }
     private BufferedImage getCurrentAnimationFrame(){
+        //MOVE
         if(xMove < 0){//left
             return animLeft.getCurrentFrame();
         }else if(xMove > 0){//right
@@ -178,8 +185,15 @@ public class Player extends Creature{
             return animUp.getCurrentFrame();
         }else if(yMove > 0){//down
             return animDown.getCurrentFrame();
+        //ATTACK
         }else if(yAttack > 0){
             return atkDown.getCurrentFrame();
+        }else if(yAttack < 0){
+            return atkUp.getCurrentFrame();
+        }else if(xAttack > 0){
+            return atkRight.getCurrentFrame();
+        }else if(xAttack < 0){
+            return atkLeft.getCurrentFrame();
         }else//facing down
             return GFXAssets.player_stand[0];
     }

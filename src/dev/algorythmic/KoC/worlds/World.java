@@ -11,7 +11,7 @@ import dev.algorythmic.KoC.entities.creatures.Player;
 import dev.algorythmic.KoC.entities.statics.Rock;
 import dev.algorythmic.KoC.entities.statics.Tree;
 import dev.algorythmic.KoC.items.ItemManager;
-import dev.algorythmic.KoC.soundFX.AudioPlayer;
+import dev.algorythmic.KoC.soundFX.FXAudioPlayer;
 import dev.algorythmic.KoC.soundFX.SFXAssets;
 import dev.algorythmic.KoC.tiles.Tile;
 import dev.algorythmic.KoC.utilities.Utils;
@@ -26,7 +26,7 @@ public class World {
     private Handler handler;
     private int width, height;
     private int spawnX, spawnY;
-    private String track;
+    private String music, ambient;
     private int[][] tiles;
     
     //ENTITIES
@@ -35,7 +35,8 @@ public class World {
     private ItemManager itemManager;
     
     //AUDIO
-    AudioPlayer audio;
+    FXAudioPlayer musicAudio;
+    FXAudioPlayer ambientNoise;
     
     //ACCESSORS
     public EntityManager getEntityManager() {return entityManager;}
@@ -105,17 +106,22 @@ public class World {
         height = Utils.parseInt(tokens[1]);
         spawnX = Utils.parseInt(tokens[2]);
         spawnY = Utils.parseInt(tokens[3]);
-        //TEST CODE
-        //audio = new AudioPlayer("Medieval Melancholy.wav");
-        //audio.playSound();
-        track = SFXAssets.getMusicTrack(Utils.parseInt(tokens[4]));
-        audio = new AudioPlayer(track);
-        audio.playSound();
+        
+        music = SFXAssets.getMusicTrack(Utils.parseInt(tokens[4]));
+        ambient = SFXAssets.getAmbientTrack(Utils.parseInt(tokens[5]));
+        musicAudio = new FXAudioPlayer(music);
+        ambientNoise = new FXAudioPlayer(ambient);
+        try {
+            musicAudio.start(null);
+            ambientNoise.start(null);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         
         tiles = new int[width][height];
         for(int y = 0 ; y < height ; y++){
             for(int x = 0 ; x < width ; x++){
-                tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 5]);
+                tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 6]);
             }
         }
     }

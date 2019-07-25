@@ -40,10 +40,8 @@ public class GFXAssets {
         SpriteSheet foliageSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/master-tileset-65x65.png"));
         SpriteSheet waterSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/waterTile.png"));
         SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/tree64x128.png"));
-        SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/CharacterAnimationSprite.png"));
         SpriteSheet startButton = new SpriteSheet(ImageLoader.loadImage("/textures/UI/startButton350x150.png"));
         SpriteSheet startButtonHovering = new SpriteSheet(ImageLoader.loadImage("/textures/UI/startButtonHovering.png"));
-        SpriteSheet attackAnimations = new SpriteSheet(ImageLoader.loadImage("/textures/Character/attackAnimationsDown.png"));
         SpriteSheet woodSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/wood120x120.png"));
         SpriteSheet worldDrops = new SpriteSheet(ImageLoader.loadImage("/textures/world/worldDrops.png"));
         SpriteSheet RockSpriteSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/RocksSpriteSheet32x32.png"));
@@ -59,47 +57,58 @@ public class GFXAssets {
             btn_start[1] = startButtonHovering.crop(0, 0, 350, 150);
         
         //PLAYER ACTIONS
+            //MOVE  (xCoord, yCoord, width, height)
+            SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Character/Character_1_animations.png"));
             player_down = new BufferedImage[2];
-            player_down[0] = playerSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
-            player_down[1] = playerSheet.crop(WIDTH * 2, 0, WIDTH, HEIGHT);
+            player_down[0] = playerSheet.crop(WIDTH, HEIGHT * 5, WIDTH, HEIGHT);
+            player_down[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 5, WIDTH, HEIGHT);
 
             player_left = new BufferedImage[2];
-            player_left[0] = playerSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);
-            player_left[1] = playerSheet.crop(WIDTH * 2, HEIGHT, WIDTH, HEIGHT);
+            player_left[0] = playerSheet.crop(WIDTH, HEIGHT * 6, WIDTH, HEIGHT);
+            player_left[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 6, WIDTH, HEIGHT);
 
             player_right = new BufferedImage[2];
-            player_right[0] = playerSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);
-            player_right[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 2, WIDTH, HEIGHT);
+            player_right[0] = playerSheet.crop(WIDTH, HEIGHT * 7, WIDTH, HEIGHT);
+            player_right[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 7, WIDTH, HEIGHT);
 
             player_up = new BufferedImage[2];
-            player_up[0] = playerSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);
-            player_up[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 3, WIDTH, HEIGHT);
+            player_up[0] = playerSheet.crop(WIDTH, HEIGHT * 8, WIDTH, HEIGHT);
+            player_up[1] = playerSheet.crop(WIDTH * 2, HEIGHT * 8, WIDTH, HEIGHT);
 
             player_stand = new BufferedImage[4];
-            /*down*/  player_stand[0] = playerSheet.crop(0, 0, WIDTH, HEIGHT);
-            /*left*/  player_stand[1] = playerSheet.crop(0, HEIGHT, WIDTH, HEIGHT);
-            /*right*/ player_stand[2] = playerSheet.crop(0, HEIGHT * 2, WIDTH, HEIGHT);
-            /*up*/    player_stand[3] = playerSheet.crop(0, HEIGHT * 3, WIDTH, HEIGHT);
+            /*down*/  player_stand[0] = playerSheet.crop(0, HEIGHT * 3, WIDTH, HEIGHT);
+            /*left*/  player_stand[1] = playerSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);
+            /*right*/ player_stand[2] = playerSheet.crop(WIDTH * 2, HEIGHT * 3, WIDTH, HEIGHT);
+            /*up*/    player_stand[3] = playerSheet.crop(WIDTH * 3, HEIGHT * 3, WIDTH, HEIGHT);
 
-            atk_down = new BufferedImage[3];
-            atk_down[0] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_down[1] = attackAnimations.crop(WIDTH, 0, WIDTH, HEIGHT);
-            atk_down[2] = attackAnimations.crop(WIDTH * 2, 0, WIDTH, HEIGHT);
+            //ATTACK
+            atk_down = new BufferedImage[5];
+            atk_down[0] = playerSheet.crop(0, 0, WIDTH, HEIGHT);
+            atk_down[1] = playerSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
+            atk_down[2] = playerSheet.crop(WIDTH *2, 0, WIDTH, HEIGHT);
+            atk_down[3] = playerSheet.crop(WIDTH * 3, 0, WIDTH, HEIGHT);
+            atk_down[4] = playerSheet.crop(WIDTH * 4, 0, WIDTH, HEIGHT);
             
-            atk_left = new BufferedImage[3];
-            atk_left[0] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_left[1] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_left[2] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
+            atk_left = new BufferedImage[5];
+            atk_left[0] = playerSheet.crop(0, HEIGHT, WIDTH, HEIGHT);
+            atk_left[1] = playerSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);
+            atk_left[2] = playerSheet.crop(WIDTH * 2, HEIGHT, WIDTH, HEIGHT);
+            atk_left[3] = playerSheet.crop(WIDTH * 3, HEIGHT, WIDTH, HEIGHT);
+            atk_left[4] = playerSheet.crop(WIDTH * 4, HEIGHT, WIDTH, HEIGHT);
             
-            atk_right = new BufferedImage[3];
-            atk_right[0] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_right[1] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_right[2] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
+            atk_right = new BufferedImage[5];
+            atk_right[0] = playerSheet.crop(0, HEIGHT * 2, WIDTH, HEIGHT);
+            atk_right[1] = playerSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);
+            atk_right[2] = playerSheet.crop(WIDTH * 2, HEIGHT * 2, WIDTH, HEIGHT);
+            atk_right[3] = playerSheet.crop(WIDTH * 3, HEIGHT * 2, WIDTH, HEIGHT);
+            atk_right[4] = playerSheet.crop(WIDTH * 4, HEIGHT * 2, WIDTH, HEIGHT);
             
-            atk_up = new BufferedImage[3];
-            atk_up[0] = attackAnimations.crop(0, 0, WIDTH, HEIGHT);
-            atk_up[1] = attackAnimations.crop(WIDTH, 0, WIDTH, HEIGHT);
-            atk_up[2] = attackAnimations.crop(WIDTH * 2, 0, WIDTH, HEIGHT);
+            atk_up = new BufferedImage[5];
+            atk_up[0] = playerSheet.crop(0, HEIGHT * 4, WIDTH, HEIGHT);
+            atk_up[1] = playerSheet.crop(WIDTH, HEIGHT * 4, WIDTH, HEIGHT);
+            atk_up[2] = playerSheet.crop(WIDTH * 2, HEIGHT * 4, WIDTH, HEIGHT);
+            atk_up[3] = playerSheet.crop(WIDTH * 3, HEIGHT * 4, WIDTH, HEIGHT);
+            atk_up[4] = playerSheet.crop(WIDTH * 4, HEIGHT * 4, WIDTH, HEIGHT);
         
          
         //TILE ASSETS 

@@ -37,14 +37,14 @@ public class GFXAssets {
     public static void init(){
         
         //IMAGES
-        SpriteSheet foliageSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/master-tileset-65x65.png"));
-        SpriteSheet waterSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/waterTile.png"));
-        SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/tree64x128.png"));
+        SpriteSheet foliageSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/Outdoor/master-tileset-65x65.png"));
+        SpriteSheet waterSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/Outdoor/waterTile.png"));
+        SpriteSheet treeSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/Outdoor/tree64x128.png"));
         SpriteSheet startButton = new SpriteSheet(ImageLoader.loadImage("/textures/UI/startButton350x150.png"));
         SpriteSheet startButtonHovering = new SpriteSheet(ImageLoader.loadImage("/textures/UI/startButtonHovering.png"));
-        SpriteSheet woodSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/wood120x120.png"));
-        SpriteSheet worldDrops = new SpriteSheet(ImageLoader.loadImage("/textures/world/worldDrops.png"));
-        SpriteSheet RockSpriteSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/RocksSpriteSheet32x32.png"));
+        SpriteSheet woodSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Items/wood120x120.png"));
+        SpriteSheet worldDrops = new SpriteSheet(ImageLoader.loadImage("/textures/Items/worldDrops.png"));
+        SpriteSheet RockSpriteSheet = new SpriteSheet(ImageLoader.loadImage("/textures/world/Outdoor/RocksSpriteSheet32x32.png"));
         
         //UI
             //FONT

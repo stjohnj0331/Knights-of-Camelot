@@ -37,7 +37,7 @@ public class SFXAssets {
         //menus
         
         //ambient        
-        ambient.add("res/soundFiles/Atmosphere/FieldsAmbient.mp3");
+        ambient.add("res/soundFiles/Atmosphere/Ambient_Field_Brook.mp3");
     }
     
     
